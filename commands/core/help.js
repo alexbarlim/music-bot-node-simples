@@ -14,11 +14,11 @@ module.exports = {
 
         const commands = client.commands.filter(x => x.showHelp !== false);
 
-        embed.setDescription('This code comes from a GitHub project (ZerioDev/Music-bot).\nThe use of this one is possible while keeping the credits for free.\nIf you want to remove the credits join the Discord support server.');
+        embed.setDescription('Este código vem de um projeto GitHub (ZerioDev/Music-bot).\nUse-o mantendo os créditos gratuitamente.\nSe você deseja remover os créditos, entre no servidor de suporte do Discord.');
         embed.addField(`Enabled - ${commands.size}`, commands.map(x => `\`${x.name}${x.aliases[0] ? ` (${x.aliases.map(y => y).join(', ')})\`` : '\`'}`).join(' | '));
 
         embed.setTimestamp();
-        embed.setFooter('Music comes first - Made with heart by Zerio ❤️', message.author.avatarURL({ dynamic: true }));
+        embed.setFooter('A música está em primeiro lugar - Feito com amor por Zerio ❤️', message.author.avatarURL({ dynamic: true }));
 
         message.channel.send({ embeds: [embed] });
     },
