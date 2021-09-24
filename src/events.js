@@ -23,5 +23,5 @@ player.on('channelEmpty', (queue) => {
 });
 
 player.on('queueEnd', (queue) => {
-    queue.metadata.send('Terminei de ler a fila inteira ✅');
+    queue.metadata.send('Terminei reproduzir a fila inteira ✅');
 });
