@@ -9,7 +9,7 @@ module.exports = {
     execute(client, message) {
         const queue = player.getQueue(message.guild.id);
 
-        if (!queue || !queue.playing) return message.channel.send(`No music currently playing ${message.author}... try again ? ❌`);
+        if (!queue || !queue.playing) return message.channel.send(`❌ Nenhuma música tocando no momento ${message.author}... tentar novamente? ❌`);
 
         const track = queue.current;
 
@@ -21,10 +21,10 @@ module.exports = {
 
         const methods = ['disabled', 'track', 'queue'];
 
-        embed.setDescription(`Volume **${queue.volume}**%\nDuration **${track.duration}**\nLoop mode **${methods[queue.repeatMode]}**\nRequested by ${track.requestedBy}`);
+        embed.setDescription(`Volume **${queue.volume}**%\nDuração **${track.duration}**\nModo loop **${methods[queue.repeatMode]}**\nSolicitado por ${track.requestedBy}`);
 
         embed.setTimestamp();
-        embed.setFooter('Music comes first - Made with heart by Zerio ❤️', message.author.avatarURL({ dynamic: true }));
+        embed.setFooter('A música está em primeiro lugar - Feito com amor por Zerio ❤️', message.author.avatarURL({ dynamic: true }));
 
         message.channel.send({ embeds: [embed] });
     },
